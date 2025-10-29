@@ -14,6 +14,7 @@ ACT_EDIT = 'act:edit'
 ACT_CANCEL = 'act:cancel'
 
 def main_menu_keyboard():
+    """Функция для создания реплай-клавиатуры."""
     keyboard_reply = ReplyKeyboardMarkup(resize_keyboard=True)
     keyboard_reply.add(KeyboardButton(MAIN_BTN_CREATE), KeyboardButton(MAIN_BTN_SCHEDULER))
 
