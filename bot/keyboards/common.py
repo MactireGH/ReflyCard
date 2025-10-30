@@ -13,6 +13,10 @@ ACT_SCHEDULE = 'act:schedule'
 ACT_EDIT = 'act:edit'
 ACT_CANCEL = 'act:cancel'
 
+## Callback fo scheduler
+ACT_JOB_DEL_PREFIX = 'job_del_'
+ACT_JOB_PAGE_PREFIX = 'job_page_'
+
 def main_menu_keyboard():
     """Функция для создания реплай-клавиатуры."""
     keyboard_reply = ReplyKeyboardMarkup(resize_keyboard=True)
@@ -30,3 +34,25 @@ def post_action_keyboard() -> InlineKeyboardMarkup:
     keyboard_inline.add(InlineKeyboardButton(text="Отмена", callback_data=ACT_CANCEL))
 
     return keyboard_inline
+
+def scheduler_list_keyboards(jobs):
+    """Функция для создания инлайн-клавиатуры для планировщика публикаций."""
+
+    keyboard_scheduler = InlineKeyboardMarkup()
+
+    if not jobs:
+        return keyboard_scheduler
+
+    for j in jobs:
+        view = InlineKeyboardButton(
+            text=f"{j['run_at']} — {j['title'][:24]}",
+            callback_data=f"{ACT_JOB_PAGE_PREFIX}{j['id']}"
+        )
+        delete_btn = InlineKeyboardButton(
+            text="Удалить",
+            callback_data=f"{ACT_JOB_DEL_PREFIX}{j['id']}"
+        )
+
+        keyboard_scheduler.row(view, delete_btn)
+
+    return keyboard_scheduler
