@@ -13,3 +13,6 @@ def get_bot_token() -> str:
         raise RuntimeError('Token not found')
 
     return token
+
+# === Константы проекта ===
+LOG_PATH = os.path.abspath(os.path.join('logs', 'debug.log'))
