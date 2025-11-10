@@ -5,7 +5,7 @@ from telebot.custom_filters import StateFilter
 from loguru import logger
 
 from settings import config
-
+from core.handlers.start import register_start_handlers
 
 
 def create_bot() -> TeleBot:
@@ -21,6 +21,7 @@ def app_running():
     bot = create_bot()
     bot.add_custom_filter(StateFilter(bot))
     logger.info('The bot has been launched.')
+    register_start_handlers(bot)
     bot.infinity_polling(skip_pending=True)
 
 if __name__ == "__main__":
