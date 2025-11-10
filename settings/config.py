@@ -15,4 +15,9 @@ def get_bot_token() -> str:
     return token
 
 # === Константы проекта ===
+# == Пути ==
+DATABASE_PATH = os.path.abspath(os.path.join('database', 'database.db'))
 LOG_PATH = os.path.abspath(os.path.join('logs', 'debug.log'))
+
+# == Команды хэндлера ==
+START_COMMAND = 'start'
