@@ -1,0 +1,109 @@
+# ============================================
+# Updated: 2025-11-27
+# ============================================
+
+# --- Python compiled / bytecode files ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Virtual environments ---
+venv/
+.venv/
+env/
+.env/
+ENV/
+env.bak/
+venv.bak/
+
+# --- IDE & Editor settings ---
+# PyCharm / JetBrains
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+.history/
+
+# --- Logs, debug, runtime files ---
+logs/
+*.log
+*.tmp
+*.bak
+*.pid
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Dependency and build artifacts ---
+build/
+dist/
+*.egg-info/
+.eggs/
+*.spec
+*.manifest
+*.pyz
+*.zip
+*.tar.gz
+
+# --- Cache directories ---
+.cache/
+.pytest_cache/
+.mypy_cache/
+.pyre/
+ruff_cache/
+
+# --- Unit tests / coverage ---
+htmlcov/
+.coverage
+.coverage.*
+.cache
+pytestdebug.log
+nosetests.xml
+coverage.xml
+
+# --- Configuration & sensitive data ---
+.env
+.env.local
+.env.dev
+.env.prod
+.env.example
+
+# --- Databases & local storage ---
+*.db
+*.sqlite3
+*.json
+*.yaml
+*.yml
+
+# --- Temporary uploads or downloads ---
+downloads/
+uploads/
+tmp/
+temp/
+media/
+files/
+
+# --- Docker & deployment ---
+docker-compose.override.yml
+*.dockerfile
+
+# --- Node / frontend ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- System specific ---
+# Windows
+*.lnk
+# macOS
+.AppleDouble
+.LSOverride
+
+# ============================================
+# End of file
+# ============================================
