@@ -97,4 +97,3 @@ def row_to_class(cls, request: tuple):
     values = dict(zip((element.name for element in fields(cls)), request))
 
     return cls(**values)
-
