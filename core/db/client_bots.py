@@ -5,7 +5,7 @@ from core.db.create_database import ClientBot
 from core.db.create_database import get_connection, row_to_class
 
 
-def get_client_token(user_id: int) -> ClientBot | None:
+def get_client_bot(user_id: int) -> ClientBot | None:
     """Searches for and returns the client bot if found in the database"""
 
     with closing(get_connection()) as connection, closing(connection.cursor) as cursor:
