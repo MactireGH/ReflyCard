@@ -6,6 +6,7 @@ from loguru import logger
 
 from core.db.create_database import create_tables
 from core.handlers import start
+from core.handlers import connect_bot
 from settings import config
 
 
@@ -24,6 +25,7 @@ def app_running():
     bot.add_custom_filter(StateFilter(bot))
     logger.info('The bot has been launched.')
     start.register_handler_start(bot)
+    connect_bot.register_handler_connect_bot(bot)
     bot.infinity_polling(skip_pending=True)
 
 if __name__ == "__main__":
