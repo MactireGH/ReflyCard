@@ -6,7 +6,7 @@ from core.db.create_database import get_connection
 from core.db.create_database import Channel
 
 
-def is_added_chanel(channel_id: str) -> bool:
+def is_connect_channel(channel_id: str) -> bool:
     """Searches for the channel in the database."""
 
     with closing(get_connection()) as connection, closing(connection.cursor()) as cursor:
@@ -19,7 +19,7 @@ def is_added_chanel(channel_id: str) -> bool:
 
         return cursor.fetchone() is not None
 
-def add_channel(channel_id, user_id, bot_id, channel_tg_id, channel_name, channel_added) -> Channel:
+def connect_channel(channel_id, user_id, bot_id, channel_tg_id, channel_name, channel_added) -> Channel:
     """Creates and saves new channel to the database."""
 
     with closing(get_connection()) as connection, closing(connection.cursor()) as cursor:
