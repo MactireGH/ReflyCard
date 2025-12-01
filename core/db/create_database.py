@@ -87,7 +87,6 @@ class Channel:
     user_id: int
     bot_id: int
     channel_tg_id: int
-    channel_username: str
     channel_name: str
     channel_added: str
 
