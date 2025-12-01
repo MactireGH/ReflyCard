@@ -50,7 +50,6 @@ def create_tables():
                               channel_id    INTEGER PRIMARY KEY,
                               user_id       INTEGER NOT NULL,
                               bot_id        INTEGER NOT NULL,
-                              channel_tg_id INTEGER NOT NULL UNIQUE,
                               channel_name  TEXT    NOT NULL,
                               channel_added TEXT    NOT NULL,
 
@@ -86,7 +85,6 @@ class Channel:
     channel_id: int
     user_id: int
     bot_id: int
-    channel_tg_id: int
     channel_name: str
     channel_added: str
 
