@@ -19,14 +19,14 @@ def is_connect_channel(channel_id: str) -> bool:
 
         return cursor.fetchone() is not None
 
-def connect_channel(channel_id, user_id, bot_id, channel_tg_id, channel_name, channel_added) -> Channel:
+def connect_channel(channel_id, user_id, bot_id, channel_name, channel_added) -> Channel:
     """Creates and saves new channel to the database."""
 
     with closing(get_connection()) as connection, closing(connection.cursor()) as cursor:
         connection, cursor = cast(sqlite3.Connection, connection), cast(sqlite3.Cursor, cursor)
 
-        cursor.execute("""INSERT INTO channels (channel_id, user_id, bot_id, channel_tg_id, channel_name, channel_added)
-                          VALUES (?, ?, ?, ?, ?, ?)""", (channel_id, user_id, bot_id, channel_tg_id, channel_name, channel_added))
+        cursor.execute("""INSERT INTO channels (channel_id, user_id, bot_id, channel_name, channel_added)
+                          VALUES (?, ?, ?, ?, ?)""", (channel_id, user_id, bot_id, channel_name, channel_added))
 
         connection.commit()
-        return Channel(channel_id, user_id, bot_id, channel_tg_id, channel_name, channel_added)
+        return Channel(channel_id, user_id, bot_id, channel_name, channel_added)
