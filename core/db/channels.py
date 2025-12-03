@@ -14,7 +14,7 @@ def is_connect_channel(channel_id: str) -> bool:
 
         cursor.execute("""SELECT 1 
                           FROM channels 
-                          WHERE channel_tg_id=? 
+                          WHERE channel_id=? 
                           LIMIT 1""", (channel_id,))
 
         return cursor.fetchone() is not None
