@@ -24,4 +24,5 @@ LOG_PATH = os.path.abspath(os.path.join('storage/logs', 'debug.log'))
 # Commands for handlers
 START_COMMAND = 'start'
 CONNECT_BOT_COMMAND = 'connect_bot'
+CONNECT_CHANNEL_COMMAND = 'connect_channel'
 REMOVE_BOT__COMMAND = 'remove_bot'
